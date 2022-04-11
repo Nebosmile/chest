@@ -11,6 +11,7 @@ require("./form_control.js")
 
 let emitter = new Emitter();
 window.emitter =emitter
+window.state = 'pre_start'
 
 window.animation = true;
 window.opened = 0;
@@ -126,6 +127,8 @@ function onAssetsLoaded(loader, resources) {
 
     });
     function Restart(){
+        window.state = "pre_start"
+        window.animation = true;
         window.emitter.removeAllListeners('goPlay');
         window.opened = 0;
         chest_arr = [];

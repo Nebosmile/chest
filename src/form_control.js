@@ -19,7 +19,9 @@ column.addEventListener('input',(e)=>{
 })
 
 update.addEventListener('click', ()=>{
-    if(!window.animation){
+    console.log(window.state);
+    if(!window.animation || window.state ==  "pre_start"){
+        
         window.emitter.emit('set_update',{
             lines:lines.value ? lines.value : 2 ,
             column:column.value ?  column.value : 3

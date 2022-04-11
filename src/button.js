@@ -5,6 +5,7 @@ class PlayButton{
         this.container  = new PIXI.Container();
         this.blur = new PIXI.filters.BlurFilter()
         this.container.on('pointerdown', ()=>{
+            window.state =  "game"
             this.container.interactive= false;
             window.animation = false;
             window.emitter.emit('goPlay')
